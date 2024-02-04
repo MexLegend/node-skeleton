@@ -2,7 +2,7 @@ import joi from 'joi';
 
 const getOneByIdSchema = joi
 	.object({
-		id: joi.number().required().messages({
+		id: joi.string().required().messages({
 			'string.base': 'The id must be a string',
 			'any.required': 'The id is required'
 		})
