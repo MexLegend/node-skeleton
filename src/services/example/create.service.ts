@@ -1,5 +1,5 @@
 
-import { badRequestError } from '@helpers/error.helper';
+import { internalServerError } from '@helpers/error.helper';
 import { IExample, ExampleErrorType } from '@interfaces/example.interface';
 
 const main = async ({ email, name, password }: IExample) => {
@@ -8,7 +8,7 @@ const main = async ({ email, name, password }: IExample) => {
 		// return response
 		return;
 	} catch (error) {
-		badRequestError<ExampleErrorType>((<Error>error).message, 'CREATE_EXAMPLE_ERROR');
+		internalServerError<ExampleErrorType>((<Error>error).message, 'CREATE_EXAMPLE_ERROR');
 	}
 };
 
