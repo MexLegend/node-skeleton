@@ -6,7 +6,7 @@ const router = Router();
 
 router.get('/', getAll);
 router.get('/:id', getOneById);
-router.post('/create', create);
+router.post('/', create);
 router.put('/:id', update);
 router.delete('/:id', exampleMiddleWare, deleteOne);
 
