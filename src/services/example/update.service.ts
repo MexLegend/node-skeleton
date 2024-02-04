@@ -1,5 +1,5 @@
 import { internalServerError } from '@helpers/error.helper';
-import { IUpdateExample, EXAMPLE_ERROR_TYPE } from '@interfaces/example.interface';
+import { IUpdateExample, ExampleErrorType } from '@interfaces/example.interface';
 
 const main = async ({ id, email, name, password }: IUpdateExample) => {
 	try {
@@ -9,7 +9,7 @@ const main = async ({ id, email, name, password }: IUpdateExample) => {
 		// return response
 		return;
 	} catch (error) {
-		internalServerError<EXAMPLE_ERROR_TYPE>((<Error>error).message, 'UPDATE_EXAMPLE_ERROR');
+		internalServerError<ExampleErrorType>((<Error>error).message, 'UPDATE_EXAMPLE_ERROR');
 	}
 };
 
