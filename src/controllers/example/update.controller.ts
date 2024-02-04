@@ -14,7 +14,7 @@ const main = async (req: Request, res: Response, next: NextFunction) => {
         await validateHelper<IUpdateExample>(schema, example);
 
         // Return response
-        res.send('Example updated successfully');
+        res.send( { data: {} } );
     } catch (error) {
         next(error);
     }
