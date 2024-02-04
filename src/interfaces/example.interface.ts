@@ -1,6 +1,6 @@
 import { IIdentifier, ITimeStamps } from "./shared.interface";
 
-export type EXAMPLE_ERROR_TYPE = 'CREATE_EXAMPLE_ERROR' | 'UPDATE_EXAMPLE_ERROR' | 'GET_EXAMPLES_ERROR' | 'EXAMPLE_NOT_FOUND' | 'DELETE_EXAMPLE_ERROR';
+export type ExampleErrorType = ErrorType<'EXAMPLE'>;
 
 export interface IExample {
     name: string;
