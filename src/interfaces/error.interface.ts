@@ -1,4 +1,4 @@
-export type HttpErrorType  =
+export type HttpErrorType =
     | 'CONFLICT'
     | 'NOT_FOUND'
     | 'UNAUTHORIZED'
@@ -6,8 +6,8 @@ export type HttpErrorType  =
     | 'INTERNAL_ERROR'
     | 'BAD_REQUEST_ERROR';
 
-export interface IError<T = HttpErrorType > {
-    readonly code: T;
+export interface IError<T = HttpErrorType> {
+    readonly httpError: T;
     readonly httpStatus: number;
     readonly message: string;
 }
