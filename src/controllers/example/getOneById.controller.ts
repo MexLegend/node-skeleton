@@ -13,7 +13,7 @@ const main = async (req: Request, res: Response, next: NextFunction) => {
         await validateHelper<IIdentifier>(schema, { id });
 
         // Return response
-        res.send({ message: 'Found example', data: {} });
+        res.send({ data: {} });
     } catch (error) {
         next(error);
     }
