@@ -11,10 +11,10 @@ const main = async (req: Request, res: Response, next: NextFunction) => {
         // Validate schema
         await validateHelper<IExample>(schema, req.body);
 
-        await create(req.body);
+        const data = await create(req.body);
 
         // Return response
-        res.send( { data: {} } );
+        res.send( { data } );
     } catch (error) {
         next(error);
     }
