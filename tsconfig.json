@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "es2016",                                 
+    "module": "commonjs",   
+    "esModuleInterop": true,                             
+    "forceConsistentCasingInFileNames": true,           
+    "strict": true,   
+    "outDir": "dist"  ,
+    "baseUrl": "./src",
+    "paths": {
+      "@controllers/*": ["controllers/*"],
+      "@database/*": ["database/*"],
+      "@helpers/*": ["helpers/*"],
+      "@interfaces/*": ["interfaces/*"],
+      "@middlewares/*": ["middlewares/*"],
+      "@routers/*": ["routers/*"],
+      "@services/*": ["services/*"],
+      "@validations/*": ["validations/*"],
+    }                                 
+  }
+}
