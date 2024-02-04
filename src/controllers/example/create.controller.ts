@@ -14,7 +14,7 @@ const main = async (req: Request, res: Response, next: NextFunction) => {
         await create(req.body);
 
         // Return response
-        res.send('Example created successfully');
+        res.send( { data: {} } );
     } catch (error) {
         next(error);
     }
