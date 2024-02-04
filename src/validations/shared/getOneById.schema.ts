@@ -8,7 +8,7 @@ const getOneByIdSchema = joi
 		})
 	})
 	.messages({
-		'any.required': 'Example Id is required'
+		'any.required': 'The Id is required'
 	})
 	.required();
 

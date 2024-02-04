@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from 'express';
 
 import { validateHelper } from '@helpers/validate.helper';
-import schema from '@validations/example/getOneById.schema';
+import schema from '@validations/shared/getOneById.schema';
 
 import { IIdentifier } from '@interfaces/shared.interface';
 

@@ -2,7 +2,7 @@ import { Request, Response, NextFunction } from 'express';
 import { getOneById } from '@services/example/index.service';
 
 import { validateHelper } from '@helpers/validate.helper';
-import schema from '@validations/example/getOneById.schema';
+import schema from '@validations/shared/getOneById.schema';
 
 import { IUpdateExample } from '@interfaces/example.interface';
 
