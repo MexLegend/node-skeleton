@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from 'express';
-import { getOneById } from '@services/example/index.service';
+import { getOneById } from '@services/user/index.service';
 
 import { validateHelper } from '@helpers/validate.helper';
 import schema from '@validations/shared/getOneById.schema';
@@ -12,8 +12,10 @@ const main = async (req: Request, res: Response, next: NextFunction) => {
         const { id } = req.params;
         await validateHelper<IIdentifier>(schema, { id });
 
+        const user = await getOneById(id);
+
         // Return response
-        res.send({ message: 'Found example', data: {} });
+        res.send({ data: user });
     } catch (error) {
         next(error);
     }

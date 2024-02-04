@@ -6,10 +6,6 @@ const updateSchema = joi
 			'string.base': 'The id must be a string',
 			'any.required': 'The id is required'
 		}),
-		name: joi.string().required().messages({
-			'string.base': 'The name must be a string',
-			'any.required': 'The name field is required'
-		}),
 		email: joi.string().required().email().messages({
 			'string.base': 'The email must be a string',
 			'any.required': 'The email field is required',
@@ -17,7 +13,7 @@ const updateSchema = joi
 		})
 	})
 	.messages({
-		'any.required': 'Id, name and email are required'
+		'any.required': 'Id and Email are required'
 	})
 	.required();
 

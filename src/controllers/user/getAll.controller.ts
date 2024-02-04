@@ -1,12 +1,13 @@
 import { Request, Response, NextFunction } from 'express';
-import { getAll } from '@services/example/index.service';
+import { getAll } from '@services/user/index.service';
 
 const main = async (req: Request, res: Response, next: NextFunction) => {
     try {
 
+        const users = await getAll();
 
         // Return response
-        res.send({ message: 'Example list', data: [] });
+        res.send({ data: users });
     } catch (error) {
         next(error);
     }

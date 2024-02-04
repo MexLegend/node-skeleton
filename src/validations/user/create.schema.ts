@@ -6,6 +6,10 @@ const createSchema = joi
             'string.base': 'The name must be a string',
             'any.required': 'The name field is required'
         }),
+        age: joi.number().required().messages({
+            'number.base': 'The age must be a number',
+            'any.required': 'The age field is required'
+        }),
         email: joi.string().required().email().messages({
             'string.base': 'The email must be a string',
             'any.required': 'The email field is required',
@@ -18,7 +22,7 @@ const createSchema = joi
         })
     })
     .messages({
-        'any.required': 'Name, Email and Password are required'
+        'any.required': 'Name, Age, Email and Password are required'
     })
     .required();
 
