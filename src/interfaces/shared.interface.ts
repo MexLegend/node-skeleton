@@ -1,4 +1,4 @@
-export type ErrorType<Model extends string> =
+export type CrudOperationError<Model extends string> =
     `GET_${Model}_ERROR` |
     `${Model}_NOT_FOUND` |
     `CREATE_${Model}_ERROR` |
