@@ -6,7 +6,7 @@ const main = async (req: Request, res: Response, next: NextFunction) => {
 
 
         // Return response
-        res.send({ message: 'Example list', data: [] });
+        res.send({ data: [] });
     } catch (error) {
         next(error);
     }
