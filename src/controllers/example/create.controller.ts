@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from 'express';
-import create from '@services/example/create.service';
+import { create } from '@services/example/index.service';
 
 import { validateHelper } from '@helpers/validate.helper';
 import schema from '@validations/example/create.schema';
