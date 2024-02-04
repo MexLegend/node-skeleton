@@ -12,8 +12,10 @@ const main = async (req: Request, res: Response, next: NextFunction) => {
         const { id } = req.params;
         await validateHelper<IIdentifier>(schema, { id });
 
+        const data = await getOneById(id);
+
         // Return response
-        res.send({ data: {} });
+        res.send({ data });
     } catch (error) {
         next(error);
     }
