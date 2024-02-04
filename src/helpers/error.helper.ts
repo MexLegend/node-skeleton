@@ -32,8 +32,8 @@ const forbiddenError = <T = HttpErrorType>(msg: string, httpError?: T) => {
     throw err;
 };
 
-const internalServerError = <T = HttpErrorType>(msg: string, httpError?: T) => {
-    const err = new CustomError(msg, httpError || 'INTERNAL_ERROR', 500);
+const internalServerError = <T = HttpErrorType>(msg: string, httpError?: T, httpStatus?: number) => {
+    const err = new CustomError(msg, httpError || 'INTERNAL_ERROR', httpStatus || 500);
     throw err;
 };
 

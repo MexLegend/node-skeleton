@@ -1,6 +1,6 @@
 
 import userModel from '@database/models/user.model';
-import { internalServerError, notFoundError } from '@helpers/error.helper';
+import { CustomError, internalServerError, notFoundError } from '@helpers/error.helper';
 import { IUserResponse, UserErrorType } from '@interfaces/user.interface';
 
 const main = async (id: string): Promise<IUserResponse> => {
@@ -14,7 +14,8 @@ const main = async (id: string): Promise<IUserResponse> => {
 		// Return response
 		return user as IUserResponse;
 	} catch (error) {
-		return internalServerError<UserErrorType>((<Error>error).message, 'USER_NOT_FOUND');
+		const safeError = error as CustomError<UserErrorType>;
+		return internalServerError<UserErrorType>(safeError.message, 'USER_NOT_FOUND', safeError.httpStatus);
 	}
 };
 
