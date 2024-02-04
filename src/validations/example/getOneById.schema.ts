@@ -3,8 +3,8 @@ import joi from 'joi';
 const getOneByIdSchema = joi
 	.object({
 		id: joi.number().required().messages({
-			'string.base': 'The exampleId must be a string',
-			'any.required': 'The exampleId is required'
+			'string.base': 'The id must be a string',
+			'any.required': 'The id is required'
 		})
 	})
 	.messages({
