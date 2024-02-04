@@ -4,9 +4,10 @@ import { getAll } from '@services/example/index.service';
 const main = async (req: Request, res: Response, next: NextFunction) => {
     try {
 
-
+        const data = await getAll();
+        
         // Return response
-        res.send({ data: [] });
+        res.send({ data });
     } catch (error) {
         next(error);
     }
