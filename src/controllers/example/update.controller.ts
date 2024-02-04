@@ -10,11 +10,13 @@ const main = async (req: Request, res: Response, next: NextFunction) => {
     try {
         // Validate schema
         const { id } = req.params;
-        const example = { ...req.body, id };
+        const example: IUpdateExample = { ...req.body, id };
         await validateHelper<IUpdateExample>(schema, example);
 
+        const updatedExample = await update(example);
+        
         // Return response
-        res.send( { data: {} } );
+        res.send( { data: updatedExample } );
     } catch (error) {
         next(error);
     }
