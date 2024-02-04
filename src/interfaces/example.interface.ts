@@ -1,6 +1,6 @@
-import { IIdentifier, ITimeStamps } from "./shared.interface";
+import { CrudOperationError, IIdentifier, ITimeStamps } from "./shared.interface";
 
-export type ExampleErrorType = ErrorType<'EXAMPLE'>;
+export type ExampleErrorType = CrudOperationError<'EXAMPLE'>;
 
 export interface IExample {
     name: string;
